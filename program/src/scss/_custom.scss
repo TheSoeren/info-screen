@@ -1,0 +1,22 @@
+@import "variables";
+
+// VENDOR
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap-vue/src/index.scss";
+@import "vue-select/src/scss/vue-select.scss";
+@import "../../node_modules/vue-multiselect/dist/vue-multiselect.min.css";
+
+// GENERAL
+@import "general";
+@import "bootstrap_override";
+
+// ELEMENTS
+// Small repeating parts which can be included in components
+@import "./elements/add_chores_modal";
+@import "./elements/icon_picker";
+
+// COMPONENTS
+// Styling of whole components
+@import "./components/app_list";
+@import "./components/app_detail";
+@import "./components/chores";

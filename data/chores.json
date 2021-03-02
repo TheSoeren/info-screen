@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Kompost leeren",
+    "repetition": {
+      "regularity": {
+        "value": "daily",
+        "label": "Täglich"
+      },
+      "weekdays": [],
+      "biWeeklyOdd": 1,
+      "daysOfMonth": []
+    },
+    "icon": {
+      "value": "compost",
+      "label": "Kompost",
+      "image": "/img/compost.64e9beeb.svg"
+    },
+    "responsible": [ "Nadine", "Fabian" ],
+    "details": "Am Abend nach dem Essen"
+  }
+]

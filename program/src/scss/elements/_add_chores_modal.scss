@@ -1,0 +1,11 @@
+.add-chores-modal {
+  &__weekly {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__monthly {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
