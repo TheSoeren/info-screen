@@ -75,6 +75,7 @@ export default {
       choresIcons,
       householdMembers,
 
+      id: moment().format('MMDDYYYYHHmmss'),
       name: '',
       repetition: {
         regularity: 'weekly',
@@ -95,6 +96,7 @@ export default {
   computed: {
     choreData () {
       return {
+        id: this.id,
         name: this.name,
         repetition: this.repetition,
         icon: this.icon,

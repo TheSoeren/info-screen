@@ -13,12 +13,12 @@
            :chore="chore"
            :cols="cols"
            :secondary="secondary"
-           @delete-chore="deleteChore"
+           @delete-chore="deleteChore(chore.id)"
     ></chore>
   </div>
 </template>
 <script>
-import { mapState, mapMutations, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import AddChoreModal from './AddChoreModal.vue'
 import Chore from './Chore.vue'
 import moment from 'moment'
@@ -45,7 +45,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['chores', 'choresFileHandler']),
+    ...mapState(['chores']),
     relevantChores () {
       if (this.chores.length) {
         if (this.today) {
@@ -62,15 +62,12 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['deleteFromChores']),
-    ...mapActions(['writeToChoresFile']),
+    ...mapActions(['addToChores', 'removeFromChores']),
     addChore (data) {
-      this.chores.push(data)
-      this.writeToChoresFile(JSON.stringify(this.chores))
+      this.addToChores(JSON.stringify(data))
     },
-    deleteChore (data) {
-      this.deleteFromChores(data)
-      this.writeToChoresFile(JSON.stringify(this.chores))
+    deleteChore (id) {
+      this.removeFromChores(id)
     },
     isChoreToday (chore) {
       const repetition = chore.repetition

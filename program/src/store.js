@@ -5,27 +5,32 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    choresFileHandler: null,
     chores: []
-  },
-  mutations: {
-    setChoresFileHandler (state, fileHandler) {
-      state.choresFileHandler = fileHandler
-    },
-    deleteFromChores (state, data) {
-      state.chores = state.chores.filter(chore => chore !== data)
-    }
   },
   actions: {
     async updateChores (context) {
-      const file = await context.state.choresFileHandler.getFile()
-      const content = await file.text()
-      context.state.chores = JSON.parse(content)
+      const response = await fetch('http://localhost:8000/chores')
+      context.state.chores = await response.json()
     },
-    async writeToChoresFile (context, jsonData) {
-      const writableStream = await context.state.choresFileHandler.createWritable()
-      await writableStream.write(jsonData)
-      await writableStream.close()
+    async addToChores (context, jsonData) {
+      await fetch('http://localhost:8000/chores', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: jsonData
+      })
+      context.dispatch('updateChores')
+    },
+    async removeFromChores (context, id) {
+      await fetch(`http://localhost:8000/chores/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
       context.dispatch('updateChores')
     }
   }

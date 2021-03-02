@@ -6,7 +6,7 @@
     <div v-if="done" class="chores-card__done">
       <font-awesome-icon icon="check" :style="{ 'color': backgroundColor }"/>
     </div>
-    <div v-else class="chores-card__delete" @click.stop="$emit('delete-chore', chore)">
+    <div v-else class="chores-card__delete" @click.stop="$emit('delete-chore')">
       <font-awesome-icon icon="trash" class="ml-auto"/>
     </div>
     <div class="chores-card__content">
