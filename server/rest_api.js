@@ -8,6 +8,7 @@ const app = express()
 
 // CORS setup
 const whitelist = [
+  'http://localhost',
   'http://localhost:8080'
 ]
 const corsOptions = {
@@ -28,9 +29,12 @@ app.use(cors(corsOptions))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+const PROJECT_PATH = '/home/pi/projects/info-screen'
+const CHORES_FILE_PATH = '/data/chores.json'
+
 // REST endpoints
 app.get('/chores', async function (req, res) {
-  fs.readFile('../data/chores.json', (err, data) => {
+  fs.readFile(PROJECT_PATH + CHORES_FILE_PATH, (err, data) => {
     if (err) {
       res.status(404).json({ "error": "not found", "err": err})
       return
@@ -40,7 +44,7 @@ app.get('/chores', async function (req, res) {
 })
 
 app.post('/chores', function (req, res) {
-  fs.readFile('../data/chores.json', (err, data) => {
+  fs.readFile(PROJECT_PATH + CHORES_FILE_PATH, (err, data) => {
     if (err) {
       res.status(404).json({ "error": "not found", "err": err})
       return
@@ -49,7 +53,7 @@ app.post('/chores', function (req, res) {
     let fileContent = JSON.parse(data)
     fileContent.push(req.body)
 
-    fs.writeFile("../data/chores.json", JSON.stringify(fileContent), err => {
+    fs.writeFile(PROJECT_PATH + CHORES_FILE_PATH, JSON.stringify(fileContent), err => {
       if (err !== null) {
         res.status(400).json({ error: "Failed to save data", err: err})
         return
@@ -61,7 +65,7 @@ app.post('/chores', function (req, res) {
 })
 
 app.delete('/chores/:id', function (req, res) {
-  fs.readFile('../data/chores.json', (err, data) => {
+  fs.readFile(PROJECT_PATH + CHORES_FILE_PATH, (err, data) => {
     if (err) {
       res.status(404).json({ "error": "not found", "err": err})
       return
@@ -70,7 +74,7 @@ app.delete('/chores/:id', function (req, res) {
     const fileContent = JSON.parse(data)
     const writeFile = fileContent.filter(chore => chore.id !== req.params.id)
 
-    fs.writeFile("../data/chores.json", JSON.stringify(writeFile), err => {
+    fs.writeFile(PROJECT_PATH + CHORES_FILE_PATH, JSON.stringify(writeFile), err => {
       if (err !== null) {
         res.status(400).json({ error: "Failed to save data", err: err})
         return

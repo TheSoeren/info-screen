@@ -28,12 +28,12 @@
     "bootstrap-vue": "^2.21.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "moment": "^2.29.1",
     "sass": "^1.26.10",
     "sass-loader": "^10.0.2",
-    "vue-template-compiler": "^2.6.11",
-    "vue-select": "3.10.6",
     "vue-multiselect": "^2.1.6",
-    "moment": "^2.29.1",
+    "vue-select": "3.10.6",
+    "vue-template-compiler": "^2.6.11",
     "vuelidate": "^0.7.6"
   },
   "eslintConfig": {
