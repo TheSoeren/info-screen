@@ -75,7 +75,7 @@ export default {
       choresIcons,
       householdMembers,
 
-      id: moment().format('MMDDYYYYHHmmss'),
+      id: '',
       name: '',
       repetition: {
         regularity: 'weekly',
@@ -129,6 +129,7 @@ export default {
       this.$bvModal.hide('add-chore')
     },
     submitForm () {
+      this.id = moment().format('MMDDYYYYHHmmss')
       this.repetition.biWeeklyOdd = this.weekOfYear % 2
 
       this.$v.$reset()
