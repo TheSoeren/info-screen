@@ -1,9 +1,9 @@
 export default [
-  { value: '1', text: 'Montag' },
-  { value: '2', text: 'Dienstag' },
-  { value: '3', text: 'Mittwoch' },
-  { value: '4', text: 'Donnerstag' },
-  { value: '5', text: 'Freitag' },
-  { value: '6', text: 'Samstag' },
-  { value: '0', text: 'Sonntag' }
+  { value: '1', label: 'Montag' },
+  { value: '2', label: 'Dienstag' },
+  { value: '3', label: 'Mittwoch' },
+  { value: '4', label: 'Donnerstag' },
+  { value: '5', label: 'Freitag' },
+  { value: '6', label: 'Samstag' },
+  { value: '0', label: 'Sonntag' }
 ]

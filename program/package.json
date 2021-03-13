@@ -11,6 +11,7 @@
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-router": "^3.4.3",
+    "vuetify": "^2.4.0",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
@@ -22,19 +23,20 @@
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "^4.5.6",
+    "@vue/cli-plugin-vuex": "^4.5.11",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
-    "bootstrap": "^4.5.3",
-    "bootstrap-vue": "^2.21.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "moment": "^2.29.1",
-    "sass": "^1.26.10",
+    "sass": "^1.32.0",
     "sass-loader": "^10.0.2",
-    "vue-multiselect": "^2.1.6",
-    "vue-select": "3.10.6",
+    "vue-cli-plugin-vuetify": "^2.2.2",
     "vue-template-compiler": "^2.6.11",
-    "vuelidate": "^0.7.6"
+    "vuetify-loader": "^1.7.0",
+    "@fullcalendar/vue": "^5.5.0",
+    "@fullcalendar/daygrid": "^5.5.0",
+    "@fullcalendar/interaction": "^5.5.0"
   },
   "eslintConfig": {
     "root": true,

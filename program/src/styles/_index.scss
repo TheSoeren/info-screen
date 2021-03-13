@@ -1,0 +1,23 @@
+@import "variables";
+
+// VENDOR
+$color-pack: false;
+@import '~vuetify/src/styles/main.sass';
+
+// GENERAL
+@import "general";
+
+// ELEMENTS
+// Small repeating parts which can be included in components
+@import "./elements/add_chores_dialog";
+@import "./elements/icon_picker";
+
+// COMPONENTS
+// Styling of whole components
+@import "./components/app_bar";
+@import "./components/app_detail";
+@import "./components/chores";
+@import "./components/chores-list";
+@import "./components/chores-view";
+@import "./components/chores-card";
+@import "./components/calendar";

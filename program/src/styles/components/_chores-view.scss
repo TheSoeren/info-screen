@@ -1,0 +1,18 @@
+.chores-view {
+  display: flex;
+  flex-flow: nowrap !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &__button {
+    grid-area: view-button;
+  }
+
+  &--today {
+    grid-area: chores-primary;
+  }
+
+  &--week {
+    grid-area: chores-secondary;
+  }
+}

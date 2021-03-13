@@ -1,27 +1,30 @@
 <template>
-  <div :class="[`chores-card col-${cols}`, { 'chores-card--secondary': secondary }]"
-        :style="[{ 'background-color': backgroundColor }]"
-        @click="toggleDone"
+  <v-card :class="['chores-card rounded-sm', { 'chores-card--secondary': secondary }]"
+          :style="[{ 'background-color': backgroundColor }]"
+          elevation="5"
+          @click="toggleDone"
   >
-    <div v-if="done" class="chores-card__done">
-      <font-awesome-icon icon="check" :style="{ 'color': backgroundColor }"/>
-    </div>
-    <div v-else class="chores-card__delete" @click.stop="$emit('delete-chore')">
-      <font-awesome-icon icon="trash" class="ml-auto"/>
-    </div>
-    <div class="chores-card__content">
+    <v-overlay :value="done" absolute @click="toggleDone">
+      <v-icon class="chores-card__check" :style="[{ 'color': backgroundColor }]">mdi-check</v-icon>
+    </v-overlay>
+    <div :class="['chores-card__content', { 'chores-card__content--done': done }]">
+      <v-btn class="chores-card__delete" absolute text icon @click.stop="removeFromChores(id)">
+        <v-icon>mdi-delete</v-icon>
+      </v-btn>
       <div class="chores-card__image-container">
-        <img :src="chore.icon.image" alt="test" class="chores-card__image">
+        <v-img :src="chore.icon.image" alt="test" contain></v-img>
       </div>
       <div class="chores-card__name">{{ chore.name }}</div>
       <template v-if="!secondary">
         <div class="chores-card__details">{{ chore.details }}</div>
-        <div class="chores-card__responsible">{{ chore.responsible.join(', ') }}</div>
       </template>
+      <div class="chores-card__responsible">{{ chore.responsible.join(', ') }}</div>
     </div>
-  </div>
+  </v-card>
 </template>
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: "Chore",
   props: {
@@ -35,19 +38,17 @@ export default {
     },
     secondary: {
       type: Boolean,
-      default: false
+      required: true
     }
   },
   data () {
     return {
       done: false,
-      backgroundColor: this.getRandomColor()
+      backgroundColor: `hsl(${Math.random() * 360}, 50%, 60%)`
     }
   },
   methods: {
-    getRandomColor () {
-      return `hsl(${Math.random() * 360}, 50%, 60%)`
-    },
+    ...mapActions(['removeFromChores']),
     toggleDone () {
       this.done = !this.done
     }

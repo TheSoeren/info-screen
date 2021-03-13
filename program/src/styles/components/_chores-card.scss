@@ -1,0 +1,71 @@
+.chores-card {
+  height: 100%;
+
+  &__check {
+    font-size: 20vw !important;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+    
+
+    &--done {
+      filter: blur(2px);
+    }
+  }
+
+  &__delete {
+    top: 0;
+    right: 0;
+  }
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    max-height: 22vh;
+  }
+
+  &__name {
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__details {
+    font-size: 10pt;
+    text-align: center;
+  }
+
+  &__responsible {
+    margin-top: auto;
+  }
+
+  &--secondary {
+    .chores-card {
+      &__check {
+        font-size: 12vw !important;
+      }
+
+      &__content {
+        padding: 10px;
+      }
+
+      &__image-container {
+        max-height: 9vh;
+      }
+
+      &__name {
+        font-size: 11pt;
+      }
+
+      &__responsible {
+        font-size: 10pt;
+      }
+    }
+  }
+}

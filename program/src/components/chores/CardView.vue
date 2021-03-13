@@ -1,31 +1,21 @@
 <template>
-  <div class="chores-view row">
-    <div v-if="today"
-         v-b-modal.add-chore
-         class="chores-view__add col-2"
-    >
-      <font-awesome-icon icon="plus" size="2x"/>
-      <add-chore-modal @add-chore="addChore"></add-chore-modal>
-    </div>
-
-    <chore v-for="(chore, index) in relevantChores"
-           :key="index"
-           :chore="chore"
-           :cols="cols"
-           :secondary="secondary"
-           @delete-chore="deleteChore(chore.id)"
-    ></chore>
+  <div class="chores-view">
+    <v-col v-for="(chore, index) in relevantChores" :key="index" :cols="cols">
+      <chore :chore="chore"
+             :cols="cols"
+             :secondary="secondary"
+      ></chore>
+    </v-col>
   </div>
 </template>
 <script>
-import { mapState, mapActions } from 'vuex'
-import AddChoreModal from './AddChoreModal.vue'
+import { mapState } from 'vuex'
 import Chore from './Chore.vue'
 import moment from 'moment'
 
 export default {
   name: 'CardView',
-  components: { AddChoreModal, Chore },
+  components: { Chore },
   props: {
     today: {
       type: Boolean,
@@ -59,35 +49,30 @@ export default {
         }
       }
       return this.chores
+    },
+    currentWeekOfYear () {
+      return moment().format('W') % 2
     }
   },
   methods: {
-    ...mapActions(['addToChores', 'removeFromChores']),
-    addChore (data) {
-      this.addToChores(JSON.stringify(data))
-    },
-    deleteChore (id) {
-      this.removeFromChores(id)
-    },
     isChoreToday (chore) {
       const repetition = chore.repetition
       const regularity = chore.repetition.regularity
       let output = false
 
-      if (regularity.value === 'daily') {
+      if (regularity === 'daily') {
         output = true
-      } else if (regularity.value === 'weekly') {
+      } else if (regularity === 'weekly') {
         const weekday = moment().day().toString()
         output = repetition.weekdays.includes(weekday)
-      } else if (regularity.value === 'bi-weekly') {
+      } else if (regularity === 'bi-weekly') {
         const weekday = moment().day().toString()
-        const oddWeek = parseInt(moment().format('W')) % 2
         const weekDayIsToday = repetition.weekdays.includes(weekday)
-        const biWeeklyIsThisWeek = repetition.biWeeklyOdd === oddWeek
+        const biWeeklyIsThisWeek = repetition.weekOfYear === this.currentWeekOfYear
 
         output = weekDayIsToday && biWeeklyIsThisWeek
-      } else if (regularity.value === 'monthly') {
-        const dayOfMonth = moment().date()
+      } else if (regularity === 'monthly') {
+        const dayOfMonth = `${moment().date()}`
         output = repetition.daysOfMonth.includes(dayOfMonth)
       }
       return output
@@ -100,9 +85,11 @@ export default {
       const regularity = chore.repetition.regularity
       let output = false
 
-      if (regularity.value === 'daily' || regularity.value === 'weekly') {
+      if (regularity === 'daily' || regularity === 'weekly') {
         output = true
-      } else if (regularity.value === 'monthly') {
+      } else if (regularity === 'bi-weekly') {
+        return repetition.weekOfYear === this.currentWeekOfYear
+      } else if (regularity === 'monthly') {
         repetition.daysOfMonth.forEach(dayOfMonth => {
           const date = moment().set("date", dayOfMonth)
 
