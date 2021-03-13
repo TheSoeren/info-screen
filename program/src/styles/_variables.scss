@@ -1,0 +1,22 @@
+$dark-pink: #a67077;
+$faded-orange: #be8e77;
+$brownish-red: #8c553f;
+
+$primary: $brownish-red;
+$secondary: $dark-pink;
+$accent: $faded-orange;
+
+// changing this has no impact on the actual app-bar height
+$app-bar-height: 70px;
+$app-content-padding: 20px;
+
+$breakpoint-min-xl: 1200px;
+$breakpoint-min-lg: 992px;
+$breakpoint-min-md: 768px;
+$breakpoint-min-sm: 576px;
+
+:export {
+  primary: $primary;
+  secondary: $secondary;
+  accent: $accent;
+}

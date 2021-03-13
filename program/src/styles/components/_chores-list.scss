@@ -1,0 +1,40 @@
+.chores-list {
+  grid-area: chores-primary;
+  grid-row-start: chores-primary;
+  grid-row-end: chores-secondary;
+
+  margin: 12px;
+  width: 60%;
+  min-width: 600px;
+
+  &__button {
+    grid-area: view-button;
+  }
+
+  &__card {
+    display: flex !important;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 20pt;
+    padding: 8px;
+    width: 100%;
+  }
+
+  &__image {
+    margin-right: 15px;
+    height: 50px;
+
+    &-container {
+      width: 50px;
+    }
+  }
+
+  &__responsible {
+    font-size: 14pt;
+    margin-left: auto;
+  }
+
+  &__delete {
+    margin-left: 15px;
+  }
+}

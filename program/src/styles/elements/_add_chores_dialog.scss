@@ -1,0 +1,10 @@
+.add-chore-dialog {
+  grid-area: add-chore-button;
+
+  &__weekly,
+  &__monthly {
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns: repeat(7, 1fr);
+  }
+}

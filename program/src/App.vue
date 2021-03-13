@@ -1,16 +1,20 @@
 <template>
-  <div class="info-screen">
-    <div class="app-list">
-      <router-link class="app-list__app app-list__app--chores" to="/">
-      </router-link>
-      <router-link class="app-list__app app-list__app--chores" to="/chores">
-        <img class="app-list__icon" :src="require('/src/img/chores/task_list.svg')" alt="chores">
-      </router-link>
-    </div>
-    <div class="app-detail">
+  <v-app class="info-screen">
+    <v-app-bar class="app-bar primary" height="70px" app>
+      <v-btn class="app-bar__app secondary" elevation="2" fab to="/">
+      </v-btn>
+      <v-divider vertical dark></v-divider>
+      <v-btn class="app-bar__app secondary" elevation="2" fab to="/chores">
+        <v-icon>mdi-format-list-checks</v-icon>
+      </v-btn>
+      <v-btn class="app-bar__app secondary" elevation="2" fab to="/calendar">
+        <v-icon>mdi-calendar-month</v-icon>
+      </v-btn>
+    </v-app-bar>
+    <v-main class="app-detail">
       <router-view/>
-    </div>
-  </div>
+    </v-main>
+  </v-app>
 </template>
 <script>
 export default {

@@ -1,0 +1,4 @@
+.app-detail {
+    height: calc(100vh - #{$app-bar-height} - #{$app-content-padding} * 2);
+    overflow: hidden;
+}

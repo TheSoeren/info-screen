@@ -29,7 +29,8 @@ app.use(cors(corsOptions))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-const PROJECT_PATH = '/home/pi/projects/info-screen'
+const PROJECT_PATH = '..'
+//const PROJECT_PATH = '/home/pi/projects/info-screen'
 const CHORES_FILE_PATH = '/data/chores.json'
 
 // REST endpoints
