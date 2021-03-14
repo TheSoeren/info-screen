@@ -1,7 +1,9 @@
 .chores {
   display: grid;
-  grid-template-areas: "add-chore-button view-button" "chores-primary chores-primary" "chores-secondary chores-secondary";
-  grid-template-columns: 40px auto;
+  grid-template-areas: "add-chore-button chores-primary chores-primary"
+                       "view-button chores-primary chores-primary"
+                       "view-button chores-secondary chores-secondary";
+  grid-template-columns: 40px 40px auto;
   grid-template-rows: 40px minmax(50%, 65%) auto;
   grid-gap: 10px;
 

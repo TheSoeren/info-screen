@@ -8,7 +8,7 @@
         <v-icon>mdi-format-list-checks</v-icon>
       </v-btn>
       <v-btn class="app-bar__app secondary" elevation="2" fab to="/calendar">
-        <v-icon>mdi-calendar-month</v-icon>
+        <v-icon>mdi-calendar-range</v-icon>
       </v-btn>
     </v-app-bar>
     <v-main class="app-detail">

@@ -1,6 +1,6 @@
 <template>
   <div class="chores">
-    <add-chore-dialog class="add-chore-dialog" @add-chore="addChore"></add-chore-dialog>
+    <add-chore-dialog class="add-chore-dialog"></add-chore-dialog>
     <template v-if="listView">
       <v-btn class="chores-list__button green darken-3 white--text" fab small @click="listView = false">
         <v-icon>mdi-card-text-outline</v-icon>
@@ -8,7 +8,7 @@
       <chores-list></chores-list>
     </template>
     <template v-else>
-      <v-btn class="chores-view__button secondary" fab small @click="listView = true">
+      <v-btn class="chores-view__button green darken-3 white--text" fab small @click="listView = true">
         <v-icon>mdi-format-list-bulleted</v-icon>
       </v-btn>
       <card-view class="chores-view--today" today></card-view>
@@ -35,10 +35,7 @@ export default {
     this.updateChores()
   },
   methods: {
-    ...mapActions(['updateChores', 'addToChores']),
-    addChore (data) {
-      this.addToChores(JSON.stringify(data))
-    }
+    ...mapActions(['updateChores'])
   }
 }
 </script>

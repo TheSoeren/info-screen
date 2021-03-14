@@ -8,7 +8,7 @@
       <v-icon class="chores-card__check" :style="[{ 'color': backgroundColor }]">mdi-check</v-icon>
     </v-overlay>
     <div :class="['chores-card__content', { 'chores-card__content--done': done }]">
-      <v-btn class="chores-card__delete" absolute text icon @click.stop="removeFromChores(id)">
+      <v-btn class="chores-card__delete" absolute text icon @click.stop="removeFromChores(chore.id)">
         <v-icon>mdi-delete</v-icon>
       </v-btn>
       <div class="chores-card__image-container">

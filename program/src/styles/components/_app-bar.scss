@@ -1,5 +1,5 @@
 .app-bar {
-    .v-toolbar__content * {
+    .v-toolbar__content > * {
         margin: 0 5px;
     }
 }
