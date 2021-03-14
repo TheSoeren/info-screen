@@ -34,9 +34,7 @@
     "vue-cli-plugin-vuetify": "^2.2.2",
     "vue-template-compiler": "^2.6.11",
     "vuetify-loader": "^1.7.0",
-    "@fullcalendar/vue": "^5.5.0",
-    "@fullcalendar/daygrid": "^5.5.0",
-    "@fullcalendar/interaction": "^5.5.0"
+    "vue-cal": "^3.10.0"
   },
   "eslintConfig": {
     "root": true,

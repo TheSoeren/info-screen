@@ -29,11 +29,13 @@ app.use(cors(corsOptions))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-const PROJECT_PATH = '..'
-//const PROJECT_PATH = '/home/pi/projects/info-screen'
+//const PROJECT_PATH = '..'
+const PROJECT_PATH = '/home/pi/projects/info-screen'
 const CHORES_FILE_PATH = '/data/chores.json'
+const EVENTS_FILE_PATH = '/data/events.json'
 
 // REST endpoints
+// CHORES
 app.get('/chores', async function (req, res) {
   fs.readFile(PROJECT_PATH + CHORES_FILE_PATH, (err, data) => {
     if (err) {
@@ -76,6 +78,59 @@ app.delete('/chores/:id', function (req, res) {
     const writeFile = fileContent.filter(chore => chore.id !== req.params.id)
 
     fs.writeFile(PROJECT_PATH + CHORES_FILE_PATH, JSON.stringify(writeFile), err => {
+      if (err !== null) {
+        res.status(400).json({ error: "Failed to save data", err: err})
+        return
+      } else {
+        res.status(200).send('Successfully saved')
+      }
+    })
+  })
+})
+
+// EVENTS
+app.get('/events', async function (req, res) {
+  fs.readFile(PROJECT_PATH + EVENTS_FILE_PATH, (err, data) => {
+    if (err) {
+      res.status(404).json({ "error": "not found", "err": err})
+      return
+    }
+    res.json(JSON.parse(data))
+  });
+})
+
+app.post('/events', function (req, res) {
+  fs.readFile(PROJECT_PATH + EVENTS_FILE_PATH, (err, data) => {
+    if (err) {
+      res.status(404).json({ "error": "not found", "err": err})
+      return
+    }
+
+    let fileContent = JSON.parse(data)
+    fileContent.push(req.body)
+
+    fs.writeFile(PROJECT_PATH + EVENTS_FILE_PATH, JSON.stringify(fileContent), err => {
+      if (err !== null) {
+        res.status(400).json({ error: "Failed to save data", err: err})
+        return
+      } else {
+        res.status(200).send('Successfully saved')
+      }
+    })
+  })
+})
+
+app.delete('/events/:id', function (req, res) {
+  fs.readFile(PROJECT_PATH + EVENTS_FILE_PATH, (err, data) => {
+    if (err) {
+      res.status(404).json({ "error": "not found", "err": err})
+      return
+    }
+
+    const fileContent = JSON.parse(data)
+    const writeFile = fileContent.filter(chore => chore.id !== req.params.id)
+
+    fs.writeFile(PROJECT_PATH + EVENTS_FILE_PATH, JSON.stringify(writeFile), err => {
       if (err !== null) {
         res.status(400).json({ error: "Failed to save data", err: err})
         return

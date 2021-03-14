@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    chores: [{"id":"1","name":"Kompost leeren","repetition":{"regularity":{"value":"weekly","label":"Täglich"},"weekdays":[],"weekOfYear":1,"daysOfMonth":[]},"icon":{"value":"compost","label":"Kompost","image":"/img/compost.64e9beeb.svg"},"responsible":["Nadine","Fabian"],"details":"Am Abend nach dem Essen"},{"id":"03092021194931","name":"test","repetition":{"regularity":{"value":"daily","label":"Täglich"},"weekdays":[],"weekOfYear":0,"daysOfMonth":[]},"icon":{"value":"car wash","label":"Auto waschen","image":"/img/car_wash.c7c6bfe6.svg"},"responsible":["Nadine"],"details":"Am Abend nach dem Essen"},{"id":"03092021194931","name":"test","repetition":{"regularity":{"value":"daily","label":"Täglich"},"weekdays":[],"weekOfYear":0,"daysOfMonth":[]},"icon":{"value":"broom","label":"Besen","image":"/img/broom.1151b1ef.svg"},"responsible":["Fabian"],"details":""}]
+    chores: [],
+    events: []
   },
   actions: {
     async updateChores (context) {
@@ -32,6 +33,31 @@ export default new Vuex.Store({
         }
       })
       context.dispatch('updateChores')
+    },
+    async updateEvents (context) {
+      const response = await fetch('http://localhost:8000/events')
+      context.state.events = await response.json()
+    },
+    async addToEvents (context, jsonData) {
+      await fetch('http://localhost:8000/events', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: jsonData
+      })
+      context.dispatch('updateEvents')
+    },
+    async removeFromEvents (context, id) {
+      await fetch(`http://localhost:8000/events/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
+      context.dispatch('updateEvents')
     }
   }
 })

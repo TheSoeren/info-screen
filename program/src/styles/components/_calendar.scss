@@ -1,4 +1,19 @@
 .calendar {
+  display: grid;
+  grid-template-areas: "add-button calendar"
+                       "view-button calendar";
+  grid-template-columns: 40px auto;
+  grid-template-rows: 40px auto;
+  grid-gap: 10px;
   height: 100%;
   padding: $app-content-padding;
+
+  &__button {
+    grid-area: view-button;
+  }
+
+  &__main {
+    grid-area: calendar;
+    overflow-y: auto;
+  }
 }

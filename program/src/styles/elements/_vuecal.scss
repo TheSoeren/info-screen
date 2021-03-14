@@ -1,0 +1,42 @@
+.vuecal {
+  font-size: 10pt;
+
+  &__menu {
+    display: none;
+  }
+
+  &__title-bar {
+    font-size: 14pt;
+  }
+
+  .month-view {
+    .vuecal {
+      &__event {
+        margin-top: 5px;
+      }
+
+      &__cell {
+        &-content {
+          justify-content: flex-start;
+          height: 100%;
+          align-items: flex-end;
+        }
+    
+        &-date {
+          padding: 4px;
+        }
+    
+        &-events {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+
+  .week-view {
+    .vuecal__event--all-day {
+      margin: 3px 3px 3px 2px;
+      width: unset;
+    }
+  }
+}

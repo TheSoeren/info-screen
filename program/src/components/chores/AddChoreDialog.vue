@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="dialog" width="50%">
+  <v-dialog v-model="dialog" width="50%" @click:outside="close">
     <template #activator="{ on, attrs }">
       <v-btn v-bind="attrs" v-on="on" class="light-green darken-2 white--text" fab small>
         <v-icon>mdi-plus</v-icon>
@@ -91,10 +91,10 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer/>
-        <v-btn color="blue darken-1" text @click="close">
-          Close
+        <v-btn color="grey lighten-1" text @click="close">
+          Abbrechen
         </v-btn>
-        <v-btn color="blue darken-1" text @click="validate">
+        <v-btn color="green darken-1" text @click="validate">
           Speichern
         </v-btn>
       </v-card-actions>
@@ -106,11 +106,10 @@ import regularityOptions from '../../js/data/chores/regularityOptions.js'
 import weeklyOptions from '../../js/data/chores/weeklyOptions.js'
 import monthlyOptions from '../../js/data/chores/monthlyOptions.js'
 import choresIcons from '../../js/data/chores/choresIcons'
-import householdMembers from '../../js/data/chores/householdMembers.js'
-
+import householdMembers from '../../js/data/householdMembers.js'
 import IconPickerTemplate from './IconPickerTemplate'
-
 import moment from 'moment'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'AddChoreDialog',
@@ -140,7 +139,7 @@ export default {
         details: '',
       },
       rules: {
-        name: [ v => !!v || 'Name ist Erforderlich' ],
+        name: [ v => !!v || 'Bezeichnung ist Erforderlich' ],
         regularity: [ v => !!v || 'Wiederholung ist Erforderlich' ],
         icon: [ v => v && !!Object.keys(v).length|| 'Icon ist Erforderlich' ],
         responsible: [ v => v && v.length > 0 || 'Verantwortlich ist Erforderlich' ]
@@ -148,6 +147,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['addToChores']),
     close () {
       this.$refs.form.reset()
       this.dialog = false
@@ -160,7 +160,7 @@ export default {
           this.chore.id = moment().format('MMDDYYYYHHmmss')
           this.chore.repetition.weekOfYear = moment().format('W') % 2
 
-          this.$emit('add-chore', this.chore)
+          this.addToChores(JSON.stringify(this.chore))
           this.dialog = false
           this.$refs.form.reset()
         }
