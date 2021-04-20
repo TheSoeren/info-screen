@@ -1,4 +1,4 @@
-# rme-website
+# Info Screen
 
 ## Project setup
 ```
