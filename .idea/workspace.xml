@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="48348057-0a75-4848-a366-82eb2c48ceb2" name="Default Changelist" comment="">
+    <list default="true" id="db69b0d0-d406-4a61-bf14-4c667468c2d2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/program/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/program/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/dist/js/app.1019d52d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/dist/js/app.1019d52d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/plugins/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/plugins/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/rest_api.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/rest_api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,29 +43,51 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1rRU3O9UhkddRGBgw0ypHZrvm7S" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1rHmLt27Wo4Z5mzCsz4d1w1BzBt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RME" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="48348057-0a75-4848-a366-82eb2c48ceb2" name="Default Changelist" comment="" />
-      <created>1618938197343</created>
+      <changelist id="db69b0d0-d406-4a61-bf14-4c667468c2d2" name="Default Changelist" comment="" />
+      <created>1618641339464</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1618938197343</updated>
+      <updated>1618641339464</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1619365650080">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619365650080" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1618641395246">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1618641395246" />
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1619368426778">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="253" width="585" height="534" key="find.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619368426778" />
   </component>
 </project>

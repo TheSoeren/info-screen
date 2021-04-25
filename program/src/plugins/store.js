@@ -10,11 +10,11 @@ export default new Vuex.Store({
   },
   actions: {
     async updateChores (context) {
-      const response = await fetch('http://localhost:8000/chores')
+      const response = await fetch('http://192.168.1.110:8000/chores')
       context.state.chores = await response.json()
     },
     async addToChores (context, jsonData) {
-      await fetch('http://localhost:8000/chores', {
+      await fetch('http://192.168.1.110:8000/chores', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -25,7 +25,7 @@ export default new Vuex.Store({
       context.dispatch('updateChores')
     },
     async removeFromChores (context, id) {
-      await fetch(`http://localhost:8000/chores/${id}`, {
+      await fetch(`http://192.168.1.110:8000/chores/${id}`, {
         method: 'DELETE',
         headers: {
           'Accept': 'application/json',
@@ -35,11 +35,11 @@ export default new Vuex.Store({
       context.dispatch('updateChores')
     },
     async updateEvents (context) {
-      const response = await fetch('http://localhost:8000/events')
+      const response = await fetch('http://192.168.1.110:8000/events')
       context.state.events = await response.json()
     },
     async addToEvents (context, jsonData) {
-      await fetch('http://localhost:8000/events', {
+      await fetch('http://192.168.1.110:8000/events', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -50,7 +50,7 @@ export default new Vuex.Store({
       context.dispatch('updateEvents')
     },
     async removeFromEvents (context, id) {
-      await fetch(`http://localhost:8000/events/${id}`, {
+      await fetch(`http://192.168.1.110:8000/events/${id}`, {
         method: 'DELETE',
         headers: {
           'Accept': 'application/json',

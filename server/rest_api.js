@@ -8,8 +8,7 @@ const app = express()
 
 // CORS setup
 const whitelist = [
-  'http://localhost',
-  'http://localhost:8080'
+  'http://192.168.1.110'
 ]
 const corsOptions = {
   origin: function (origin, callback) {
@@ -30,7 +29,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 //const PROJECT_PATH = '..'
-const PROJECT_PATH = '/home/pi/projects/info-screen'
+const PROJECT_PATH = '/home/pi/infoscreen'
 const CHORES_FILE_PATH = '/data/chores.json'
 const EVENTS_FILE_PATH = '/data/events.json'
 

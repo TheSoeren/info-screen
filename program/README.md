@@ -20,6 +20,13 @@ npm run build
 npm run lint
 ```
 
+### Location on server
+```
+Build of server: /var/www/ht§§ml/
+Rest server: /home/pi/infoscreen/rest/
+Data: /home/pi/infoscreen/data/
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
