@@ -1,5 +1,5 @@
 <template>
-  <v-dialog :value="show" width="50%" @click:outside="close">
+  <v-dialog :value="show" @click:outside="close">
     <v-card v-if="event">
       <v-card-title>
         {{ event.title }}
@@ -10,20 +10,20 @@
       </v-card-title>
       <v-card-text>
         <v-row>
-          <v-col cols="2">Start:</v-col>
-          <v-col cols="10">{{ formatDate(event.start) }}</v-col>
+          <v-col cols="3">Start:</v-col>
+          <v-col cols="9">{{ formatDate(event.start) }}</v-col>
         </v-row>
         <v-row>
-          <v-col cols="2">Ende:</v-col>
-          <v-col cols="10">{{ formatDate(event.end) }}</v-col>
+          <v-col cols="3">Ende:</v-col>
+          <v-col cols="9">{{ formatDate(event.end) }}</v-col>
         </v-row>
         <v-row>
-          <v-col cols="2">Inhalt:</v-col>
-          <v-col cols="10" v-html="event.content"></v-col>
+          <v-col cols="3">Inhalt:</v-col>
+          <v-col cols="9" v-html="event.content"></v-col>
         </v-row>
         <v-row>
-          <v-col cols="2">Personen:</v-col>
-          <v-col cols="10">{{ event.participants.join(', ') }}</v-col>
+          <v-col cols="3">Personen:</v-col>
+          <v-col cols="9">{{ event.participants.join(', ') }}</v-col>
         </v-row>
       </v-card-text>
       <v-card-actions>

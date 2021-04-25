@@ -11,3 +11,11 @@
   padding: $app-content-padding;
   overflow-y: auto;
 }
+
+@media (max-width: $breakpoint-min-md) {
+  .chores {
+    grid-template-areas: "add-chore-button view-button view-button"
+                         "chores-primary chores-primary chores-primary"
+                         "chores-primary chores-primary chores-primary";
+  }
+}

@@ -8,6 +8,7 @@
     <v-btn v-else class="calendar__button green darken-3 white--text" fab small @click="$refs.vuecal.switchView('week')">
       <v-icon>mdi-calendar-week</v-icon>
     </v-btn>
+    <add-shift-dialog class="add-shift-dialog"></add-shift-dialog>
     <div class="calendar__main">
       <vue-cal ref="vuecal"
                :events="events"
@@ -27,11 +28,12 @@ import { mapState, mapActions } from 'vuex'
 import VueCal from 'vue-cal'
 import 'vue-cal/dist/i18n/de.js'
 import AddEventDialog from './AddEventDialog.vue'
+import AddShiftDialog from './AddShiftDialog.vue'
 import EventDetailDialog from './EventDetailDialog.vue'
 
 export default {
   name: 'Calendar',
-  components: { VueCal, AddEventDialog, EventDetailDialog },
+  components: { VueCal, AddEventDialog, AddShiftDialog, EventDetailDialog },
   data() {
     return {
       disabledViews: ['years', 'year', 'day'],

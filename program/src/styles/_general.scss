@@ -2,3 +2,13 @@
 html {
   overflow-y: hidden !important;
 }
+
+.v-dialog {
+  width: 50% !important;
+}
+
+@media (max-width: $breakpoint-min-md) {
+  .v-dialog {
+    width: 100% !important;
+  }
+}

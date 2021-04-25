@@ -1,8 +1,11 @@
 <template>
   <div class="chores-view">
-    <v-col v-for="(chore, index) in relevantChores" :key="index" :cols="cols">
+    <v-col v-for="(chore, index) in relevantChores"
+           class="chores-view__column"
+           :key="index"
+           :cols="cols"
+    >
       <chore :chore="chore"
-             :cols="cols"
              :secondary="secondary"
       ></chore>
     </v-col>
