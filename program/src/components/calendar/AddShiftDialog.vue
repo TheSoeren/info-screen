@@ -88,7 +88,7 @@ export default {
 
       switch (shift) {
         case 'S1':
-          this.event.content = '07:00 - 15:54'
+          this.event.content = 'Schule'
           break
         case 'FD':
           this.event.content = '07:00 - 15:54'

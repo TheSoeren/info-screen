@@ -19,22 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db69b0d0-d406-4a61-bf14-4c667468c2d2" name="Default Changelist" comment="move server, data and site to raspberry pi">
-      <change afterPath="$PROJECT_DIR$/program/src/components/calendar/AddShiftDialog.vue" afterDir="false" />
+    <list default="true" id="db69b0d0-d406-4a61-bf14-4c667468c2d2" name="Default Changelist" comment="move server, data and site to raspberry pi&#10;- add fast event creation for work shifts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/program/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/components/calendar/AddEventDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/calendar/AddEventDialog.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/components/calendar/EventDetailDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/calendar/EventDetailDialog.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/components/calendar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/calendar/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/components/chores/AddChoreDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/chores/AddChoreDialog.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/components/chores/CardView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/chores/CardView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/components/chores/Chore.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/chores/Chore.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/styles/_general.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/_general.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/styles/components/_calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/components/_calendar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/styles/components/_chores-list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/components/_chores-list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/styles/components/_chores-view.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/components/_chores-view.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/styles/components/_chores.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/components/_chores.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/rest_api.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/rest_api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/components/calendar/AddShiftDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/calendar/AddShiftDialog.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619368863333</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="move server, data and site to raspberry pi&#10;- add fast event creation for work shifts">
+      <created>1619376551529</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619376551529</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -104,7 +98,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="move server, data and site to raspberry pi" />
-    <option name="LAST_COMMIT_MESSAGE" value="move server, data and site to raspberry pi" />
+    <MESSAGE value="move server, data and site to raspberry pi&#10;- add fast event creation for work shifts" />
+    <option name="LAST_COMMIT_MESSAGE" value="move server, data and site to raspberry pi&#10;- add fast event creation for work shifts" />
   </component>
   <component name="WindowStateProjectService">
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1619365650080">
@@ -119,10 +114,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="86" key="MergeDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619368815594" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1619368865327">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1619376552755">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619368865327" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619376552755" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619373641831">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
