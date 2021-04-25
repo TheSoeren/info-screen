@@ -32,10 +32,6 @@ export default {
       type: Object,
       required: true
     },
-    cols: {
-      type: Number,
-      default: 3
-    },
     secondary: {
       type: Boolean,
       required: true

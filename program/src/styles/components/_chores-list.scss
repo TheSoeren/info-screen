@@ -4,8 +4,6 @@
   grid-row-end: chores-secondary;
 
   margin: 12px;
-  width: 60%;
-  min-width: 600px;
 
   &__button {
     grid-area: view-button;
@@ -32,6 +30,7 @@
   &__responsible {
     font-size: 14pt;
     margin-left: auto;
+    text-align: right;
   }
 
   &__delete {

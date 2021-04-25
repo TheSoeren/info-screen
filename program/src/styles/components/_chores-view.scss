@@ -1,5 +1,6 @@
 .chores-view {
   display: flex;
+  flex-direction: row;
   flex-flow: nowrap !important;
   overflow-x: auto;
   overflow-y: hidden;
@@ -14,5 +15,21 @@
 
   &--week {
     grid-area: chores-secondary;
+  }
+}
+
+@media (max-width: $breakpoint-min-md) {
+  .chores-view {
+    flex-direction: column !important;
+    overflow-y: auto;
+
+    &__column {
+      max-width: none !important;
+      flex: auto !important;
+    }
+
+    &--week {
+      display: none;
+    }
   }
 }

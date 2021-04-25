@@ -8,7 +8,8 @@ const app = express()
 
 // CORS setup
 const whitelist = [
-  'http://192.168.1.110'
+  'http://192.168.1.110',
+  'http://localhost:8080'
 ]
 const corsOptions = {
   origin: function (origin, callback) {

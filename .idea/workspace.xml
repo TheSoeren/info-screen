@@ -19,13 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db69b0d0-d406-4a61-bf14-4c667468c2d2" name="Default Changelist" comment="">
+    <list default="true" id="db69b0d0-d406-4a61-bf14-4c667468c2d2" name="Default Changelist" comment="move server, data and site to raspberry pi">
+      <change afterPath="$PROJECT_DIR$/program/src/components/calendar/AddShiftDialog.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/program/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/program/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/program/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/dist/js/app.1019d52d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/dist/js/app.1019d52d.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/plugins/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/plugins/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/components/calendar/AddEventDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/calendar/AddEventDialog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/components/calendar/EventDetailDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/calendar/EventDetailDialog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/components/calendar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/calendar/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/components/chores/AddChoreDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/chores/AddChoreDialog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/components/chores/CardView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/chores/CardView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/components/chores/Chore.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/chores/Chore.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/styles/_general.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/_general.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/styles/components/_calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/components/_calendar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/styles/components/_chores-list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/components/_chores-list.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/styles/components/_chores-view.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/components/_chores-view.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/styles/components/_chores.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/components/_chores.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/rest_api.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/rest_api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +42,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="cleanup-and-build" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -50,8 +63,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RME" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/program/src/components/calendar" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Info-screen\program\src\components\calendar" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -62,6 +80,14 @@
       <option name="presentableId" value="Default" />
       <updated>1618641339464</updated>
     </task>
+    <task id="LOCAL-00001" summary="move server, data and site to raspberry pi">
+      <created>1619368863333</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619368863333</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -76,6 +102,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="move server, data and site to raspberry pi" />
+    <option name="LAST_COMMIT_MESSAGE" value="move server, data and site to raspberry pi" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1619365650080">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -85,9 +115,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1618641395246" />
-    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1619368426778">
+    <state x="184" y="86" key="MergeDialog" timestamp="1619368815594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="585" height="534" key="find.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619368426778" />
+    <state x="184" y="86" key="MergeDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619368815594" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1619368865327">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619368865327" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619373641831">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619373641831" />
+    <state x="331" y="159" width="1206" height="674" key="find.popup" timestamp="1619376029357">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="331" y="159" width="1206" height="674" key="find.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619376029357" />
+    <state x="739" y="233" key="git4idea.branch.GitSmartOperationDialog" timestamp="1619368800314">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="233" key="git4idea.branch.GitSmartOperationDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619368800314" />
   </component>
 </project>

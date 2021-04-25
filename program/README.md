@@ -22,13 +22,19 @@ npm run lint
 
 ### Location on server
 ```
-Build of server: /var/www/ht§§ml/
+Build of server: /var/www/html/
 Rest server: /home/pi/infoscreen/rest/
 Data: /home/pi/infoscreen/data/
 ```
 
+### Reloading rest server after changes
+```
+sudo systemctl daemon-reload
+sudo systemctl restart infoscreen
+``` 
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Used https://thenounproject.com/search/?q=chores for icons
+### Used https://thenounproject.com/ for icons
 ### Used https://vectorpaint.yaks.co.nz/ to edit svg
