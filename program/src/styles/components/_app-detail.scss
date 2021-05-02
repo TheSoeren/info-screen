@@ -4,7 +4,7 @@
 }
 
 @media (max-width: $breakpoint-min-md) {
-  .app-detail {
-      margin-top: 50px;
+  .calendar-opened .app-detail {
+    margin-top: 50px;
   }
 }

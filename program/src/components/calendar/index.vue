@@ -44,6 +44,7 @@ export default {
     }
   },
   created () {
+    document.body.classList.add('calendar-opened')
     this.updateEvents()
   },
   mounted () {
