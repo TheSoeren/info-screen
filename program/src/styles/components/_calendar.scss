@@ -1,16 +1,17 @@
 .calendar {
   display: grid;
-  grid-template-areas: "add-button calendar calendar"
-                       "view-button calendar calendar"
-                       "shift-button calendar calendar";
+  grid-template-areas: "add-event-button calendar calendar"
+                       "change-view-button calendar calendar"
+                       "add-shift-button calendar calendar";
   grid-template-columns: 40px 40px auto;
   grid-template-rows: 40px 40px auto;
   grid-gap: 10px;
+
   height: 100%;
   padding: $app-content-padding;
 
   &__button {
-    grid-area: view-button;
+    grid-area: change-view-button;
   }
 
   &__main {
@@ -21,7 +22,7 @@
 
 @media (max-width: $breakpoint-min-md) {
   .calendar {
-    grid-template-areas: "add-button view-button shift-button"
+    grid-template-areas: "add-event-button change-view-button add-shift-button"
                          "calendar calendar calendar"
                          "calendar calendar calendar";
   }

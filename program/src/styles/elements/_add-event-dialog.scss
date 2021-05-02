@@ -1,3 +1,14 @@
 .add-event-dialog {
   grid-area: add-event-button;
+
+
+  &__action-bar {
+    display: flex;
+  }
+}
+
+@media (max-width: $breakpoint-min-md) {
+  .add-event-dialog__action-bar {
+    flex-direction: column;
+  }
 }

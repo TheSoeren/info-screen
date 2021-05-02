@@ -1,7 +1,6 @@
 <template>
   <div class="calendar">
-    <add-event-dialog class="add-event-dialog"></add-event-dialog>
-    <event-detail-dialog :show="detailDialog" :event="selectedEvent" @close="detailDialog = false"></event-detail-dialog>
+    <add-event-dialog ref="addEventDialog" class="add-event-dialog"></add-event-dialog>
     <v-btn v-if="isWeekView()" class="calendar__button green darken-3 white--text" fab small @click="$refs.vuecal.switchView('month')">
       <v-icon>mdi-calendar-month</v-icon>
     </v-btn>
@@ -9,6 +8,7 @@
       <v-icon>mdi-calendar-week</v-icon>
     </v-btn>
     <add-shift-dialog class="add-shift-dialog"></add-shift-dialog>
+    <event-detail-dialog :show="detailDialog" :event="selectedEvent" @close="detailDialog = false"></event-detail-dialog>
     <div class="calendar__main">
       <vue-cal ref="vuecal"
                :events="events"
@@ -24,6 +24,7 @@
   </div>
 </template>
 <script>
+import moment from 'moment'
 import { mapState, mapActions } from 'vuex'
 import VueCal from 'vue-cal'
 import 'vue-cal/dist/i18n/de.js'
@@ -71,6 +72,11 @@ export default {
     openDetailDialog (event) {
       this.selectedEvent = event
       this.detailDialog = true
+    },
+    addEvent (event) {
+      this.$refs.addEventDialog.dialog = true
+      const startDate = moment(event).format('yyyy-MM-DD HH:mm:ss')
+      this.$refs.addEventDialog.event.start = startDate
     }
   }
 }
