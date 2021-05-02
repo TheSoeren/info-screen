@@ -60,9 +60,12 @@
                               v-model="event.participants"
                               :items="householdMembers"
                               :search-input.sync="searchInput"
+                              item-text="name"
+                              return-object
                               hide-selected
                               multiple
                               chips
+                              clearable
                               @input="searchInput=null"
               ></v-autocomplete>
             </v-col>
@@ -73,19 +76,31 @@
         <small>** Mit HTML parser</small>
       </v-card-text>
       <v-card-actions>
-        <v-spacer/>
-        <v-btn color="grey lighten-1" text @click="close">
-          Abbrechen
-        </v-btn>
-        <v-btn color="green darken-1" text @click="validate">
-          Speichern
-        </v-btn>
+        <div class="add-event-dialog__action-bar">
+          <div>
+            <template v-for="shift in shiftOptions">
+              <v-btn :key="shift.name" :disabled="!event.start" @click="createShift(shift)" fab small>
+                {{ shift.name }}
+              </v-btn>
+            </template>
+          </div>
+          <div>
+            <v-spacer/>
+            <v-btn color="grey lighten-1" text @click="close">
+              Abbrechen
+            </v-btn>
+            <v-btn color="green darken-1" text @click="validate">
+              Speichern
+            </v-btn>
+          </div>
+        </div>
       </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
 <script>
 import householdMembers from '../../js/data/householdMembers.js'
+import shiftOptions from '../../js/data/events/shiftOptions.js'
 import VDatetimePicker from '../DatetimePicker'
 import moment from 'moment'
 import { mapActions } from 'vuex'
@@ -96,6 +111,7 @@ export default {
   data () {
     return {
       householdMembers,
+      shiftOptions,
       dialog: false,
       searchInput: null,
       valid: true,
@@ -111,7 +127,7 @@ export default {
       },
       rules: {
         title: [ v => !!v || 'Bezeichnung ist Erforderlich' ],
-        start: [ v => !!v || 'Startdatum ist Erforderlich' ],
+        start: [ v => !!v || 'datum ist Erforderlich' ],
         end: [ v => !!v || 'Enddatum ist Erforderlich' ]
       }
     }
@@ -120,7 +136,16 @@ export default {
     ...mapActions(['addToEvents']),
     close () {
       this.dialog = false
-      this.event.class = 'white--text'
+      this.event = {
+        id: '',
+        title: '',
+        allDay: false,
+        start: null,
+        end: null,
+        content: '',
+        participants: [],
+        class: 'white--text'
+      }
       this.$refs.startPicker.clearHandler()
       this.$refs.endPicker.clearHandler()
       this.$refs.form.resetValidation()
@@ -132,18 +157,30 @@ export default {
         if (this.valid) {
           this.event.id = moment().format('MMDDYYYYHHmmss')
           const participants = this.event.participants
-          if (participants.length !== 1) {
+          this.event.participants = participants.map(participant => participant.name)
+          if (participants.length > 1) {
             this.event.class += ' teal'
-          } else if (participants[0] === 'Fabian') {
-            this.event.class += ' green'
-          } else if (participants[0] === 'Nadine') {
-            this.event.class += ' purple darken-3'
+          } else {
+            this.event.class += participants[0].class
           }
 
           this.addToEvents(JSON.stringify(this.event))
           this.close()
         }
       })
+    },
+    createShift (shift) {
+      this.event.id = moment().format('MMDDYYYYHHmmss')
+      this.event.title = shift.name
+      this.event.allDay = true,
+      this.event.start = moment(this.event.start).format('yyyy-MM-DD')
+      this.event.end = this.event.start
+      this.event.content = shift.content
+      this.event.participants = [ 'Nadine' ]
+      this.event.class = 'white--text purple darken-3'
+
+      this.addToEvents(JSON.stringify(this.event))
+      this.close()
     }
   }
 }

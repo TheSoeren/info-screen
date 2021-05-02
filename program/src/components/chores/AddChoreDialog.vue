@@ -57,6 +57,7 @@
                               :rules="rules.icon"
                               return-object
                               hide-selected
+                              clearable
               >
                 <template slot="selection" slot-scope="{ item }">
                   <icon-picker-template :item="item" chips/>
@@ -74,9 +75,11 @@
                               :items="householdMembers"
                               :rules="rules.responsible"
                               :search-input.sync="searchInput"
+                              item-text="name"
                               hide-selected
                               multiple
                               chips
+                              clearable
                               @input="searchInput=null"
               ></v-autocomplete>
             </v-col>
@@ -150,6 +153,19 @@ export default {
     ...mapActions(['addToChores']),
     close () {
       this.$refs.form.reset()
+      this.chore = {
+        id: '',
+        name: '',
+        repetition: {
+          regularity: '',
+          weekdays: [],
+          weekOfYear: 0,
+          daysOfMonth : []
+        },
+        icon: {},
+        responsible: [],
+        details: '',
+      },
       this.dialog = false
     },
     validate () {
