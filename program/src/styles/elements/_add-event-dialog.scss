@@ -1,14 +1,26 @@
 .add-event-dialog {
   grid-area: add-event-button;
 
-
   &__action-bar {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+  }
+
+  &__shift-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__action-buttons {
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
 @media (max-width: $breakpoint-min-md) {
   .add-event-dialog__action-bar {
+    margin-left: auto;
     flex-direction: column;
   }
 }

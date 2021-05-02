@@ -77,15 +77,14 @@
       </v-card-text>
       <v-card-actions>
         <div class="add-event-dialog__action-bar">
-          <div>
+          <div class="add-event-dialog__shift-buttons">
             <template v-for="shift in shiftOptions">
               <v-btn :key="shift.name" :disabled="!event.start" @click="createShift(shift)" fab small>
                 {{ shift.name }}
               </v-btn>
             </template>
           </div>
-          <div>
-            <v-spacer/>
+          <div class="add-event-dialog__action-buttons">
             <v-btn color="grey lighten-1" text @click="close">
               Abbrechen
             </v-btn>
