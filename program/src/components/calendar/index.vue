@@ -19,6 +19,7 @@
                active-view="week"
                locale="de"
                @view-change="highlightNow"
+               @cell-dblclick="addEvent($event)"
       ></vue-cal>
     </div>
   </div>
