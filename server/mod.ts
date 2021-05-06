@@ -3,7 +3,8 @@ import { Cors } from 'https://deno.land/x/drash_middleware@v0.7.6/cors/mod.ts'
 
 import Constants from './Constants.ts'
 
-import Chores from './resources/Chores.ts'
+import ChoreResource from './resources/ChoreResource.ts'
+import EventResource from './resources/EventResource.ts'
 
 /**
  * The drash server itself
@@ -18,7 +19,10 @@ const server: Drash.Http.Server = new Drash.Http.Server({
             })
         ]
     },
-    resources: [ Chores ],
+    resources: [
+        ChoreResource,
+        EventResource
+    ],
     response_output: "application/json"
 })
 

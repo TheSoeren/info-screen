@@ -1,14 +1,1 @@
-[
-  {
-    "id": "03142021182915",
-    "title": "Nadine Geburtstag",
-    "allDay": true,
-    "start": "2021-03-18",
-    "end": "2021-03-18",
-    "content": "",
-    "participants": [
-      "Nadine"
-    ],
-    "class": "white--text purple darken-3"
-  }
-]
+[{"id":"03142021182915","title":"Nadine Geburtstag","allDay":true,"start":"2021-03-18","end":"2021-03-18","content":"","participants":["Nadine"],"class":"white--text purple darken-3"}]

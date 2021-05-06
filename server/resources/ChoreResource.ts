@@ -1,7 +1,7 @@
 import { Drash } from 'https://deno.land/x/drash@v1.4.4/mod.ts'
 import ChoreHandler from '../handlers/ChoreHandler.ts'
 
-export default class Chores extends Drash.Http.Resource {
+export default class ChoreResource extends Drash.Http.Resource {
     static paths = ['/chores/:id?']
 
     public async GET () {
@@ -26,7 +26,7 @@ export default class Chores extends Drash.Http.Resource {
             try {
                 await ChoreHandler.deleteChore(id)
 
-                this.response.status_code = 404
+                this.response.status_code = 200
                 this.response.body = {
                     success: 'Successfully saved'
                 }
@@ -51,7 +51,7 @@ export default class Chores extends Drash.Http.Resource {
         const body: any = this.request.getAllBodyParams().data
 
         try {
-            await ChoreHandler.addChore(body[0])
+            await ChoreHandler.addChore(body)
 
             this.response.status_code = 200
             this.response.body = {
