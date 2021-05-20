@@ -1,15 +1,17 @@
 // Dependencies
 const fs = require('fs')
-const http = require('http');
+const http = require('http')
 const express = require('express')
 const cors = require('cors')
+const cmd = require('node-cmd')
 
 const app = express()
 
 // CORS setup
 const whitelist = [
   'http://192.168.1.110',
-  'http://localhost:8080'
+  'http://localhost:8080',
+  'http://localhost:8081'
 ]
 const corsOptions = {
   origin: function (origin, callback) {
@@ -32,11 +34,22 @@ app.use(express.json())
 //const PROJECT_PATH = '..'
 const PROJECT_PATH = '/home/pi/infoscreen'
 const CHORES_FILE_PATH = '/data/chores.json'
+const FILTERED_CHORES_FILE_PATH = '/data/filtered_chores.json'
 const EVENTS_FILE_PATH = '/data/events.json'
 
 // REST endpoints
 // CHORES
 app.get('/chores', async function (req, res) {
+  fs.readFile(PROJECT_PATH + FILTERED_CHORES_FILE_PATH, (err, data) => {
+    if (err) {
+      res.status(404).json({ "error": "not found", "err": err})
+      return
+    }
+    res.json(JSON.parse(data))
+  });
+})
+
+app.get('/chores/all', async function (req, res) {
   fs.readFile(PROJECT_PATH + CHORES_FILE_PATH, (err, data) => {
     if (err) {
       res.status(404).json({ "error": "not found", "err": err})
@@ -60,11 +73,12 @@ app.post('/chores', function (req, res) {
       if (err !== null) {
         res.status(400).json({ error: "Failed to save data", err: err})
         return
-      } else {
-        res.status(200).send('Successfully saved')
       }
     })
   })
+  
+  cmd.run('/usr/bin/node /home/pi/infoscreen/rest/reset_chores.js true')
+  res.status(200).send('Successfully saved')
 })
 
 app.delete('/chores/:id', function (req, res) {
@@ -78,6 +92,49 @@ app.delete('/chores/:id', function (req, res) {
     const writeFile = fileContent.filter(chore => chore.id !== req.params.id)
 
     fs.writeFile(PROJECT_PATH + CHORES_FILE_PATH, JSON.stringify(writeFile), err => {
+      if (err !== null) {
+        res.status(400).json({ error: "Failed to save data", err: err})
+        return
+      }
+    })
+  })
+
+  fs.readFile(PROJECT_PATH + FILTERED_CHORES_FILE_PATH, (err, data) => {
+    if (err) {
+      res.status(404).json({ "error": "not found", "err": err})
+      return
+    }
+
+    const filteredFileContent = JSON.parse(data)
+    const filteredWriteFile = filteredFileContent.filter(chore => chore.id !== req.params.id)
+
+    fs.writeFile(PROJECT_PATH + FILTERED_CHORES_FILE_PATH, JSON.stringify(filteredWriteFile), err => {
+      if (err !== null) {
+        res.status(400).json({ error: "Failed to save data", err: err})
+        return
+      }
+    })
+  })
+
+  res.status(200).send('Successfully saved')
+})
+
+app.post('/chores/:index', function (req, res) {
+  fs.readFile(PROJECT_PATH + FILTERED_CHORES_FILE_PATH, (err, data) => {
+    if (err) {
+      res.status(404).json({ "error": "not found", "err": err})
+      return
+    }
+
+    const fileContent = JSON.parse(data)
+    try {
+      fileContent[req.params.index].done = !fileContent[req.params.index].done
+    } catch (e) {
+      res.status(400).json({ "error": "index does not exist", "err": e})
+      return
+    }
+
+    fs.writeFile(PROJECT_PATH + FILTERED_CHORES_FILE_PATH, JSON.stringify(fileContent), err => {
       if (err !== null) {
         res.status(400).json({ error: "Failed to save data", err: err})
         return

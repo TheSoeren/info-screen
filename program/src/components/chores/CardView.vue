@@ -6,6 +6,7 @@
            :cols="cols"
     >
       <chore :chore="chore"
+             :chore-index="index"
              :secondary="secondary"
       ></chore>
     </v-col>
@@ -38,20 +39,17 @@ export default {
     }
   },
   computed: {
-    ...mapState(['chores']),
+    ...mapState(['chores', 'allChores']),
     relevantChores () {
-      if (this.chores.length) {
-        if (this.today) {
-          return this.chores.filter(chore => {
-            return this.isChoreToday(chore)
-          })
-        } else if (this.thisWeek) {
-          return this.chores.filter(chore => {
-            return this.isChoreThisWeek(chore) && !this.isChoreToday(chore)
-          })
-        }
+      if (this.today) {
+        return this.chores
+      } else if (this.thisWeek) {
+        return this.allChores.filter(chore => {
+          return this.isChoreThisWeek(chore) && !this.chores.filter(findChore => findChore.id === chore.id).length
+        })
+      } else {
+        return []
       }
-      return this.chores
     },
     currentWeekOfYear () {
       return moment().format('W') % 2

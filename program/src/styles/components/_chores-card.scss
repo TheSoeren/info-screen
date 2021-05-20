@@ -46,11 +46,9 @@
   }
 
   &--secondary {
-    .chores-card {
-      &__check {
-        font-size: 12vw !important;
-      }
+    pointer-events: none;
 
+    .chores-card {
       &__content {
         padding: 10px;
       }
@@ -59,12 +57,32 @@
         max-height: 9vh;
       }
 
+      &__details {
+        display: none;
+      }
+
       &__name {
         font-size: 11pt;
       }
 
       &__responsible {
         font-size: 10pt;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-min-md) {
+  .chores-card--secondary {
+    .chores-card {
+      &__image-container {
+        display: flex;
+        justify-content: center;
+        max-height: 22vh;
+      }
+
+      &__details {
+        display: block;
       }
     }
   }
