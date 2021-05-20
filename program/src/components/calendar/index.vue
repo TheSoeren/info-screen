@@ -18,6 +18,7 @@
                events-on-month-view="short"
                active-view="week"
                locale="de"
+               today-button
                @view-change="highlightNow"
                @cell-dblclick="addEvent($event)"
       ></vue-cal>
@@ -45,6 +46,7 @@ export default {
   },
   created () {
     this.updateEvents()
+    document.querySelector('.app-detail').classList.add('app-detail--glitch-margin')
   },
   mounted () {
     this.highlightNow()

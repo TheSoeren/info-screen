@@ -7,4 +7,13 @@
     grid-template-rows: min-content;
     grid-template-columns: repeat(7, 1fr);
   }
+
+  &__weekly {
+    display: flex;
+    flex-flow: wrap;
+
+    > * {
+      margin-right: 10px;
+    }
+  }
 }

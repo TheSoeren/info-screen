@@ -4,16 +4,22 @@
   flex-flow: nowrap !important;
   overflow-x: auto;
   overflow-y: hidden;
+  margin-top: -12px;
+  margin-left: -12px;
 
-  &__button {
-    grid-area: view-button;
+  &__button-list {
+    grid-area: button-list;
   }
 
-  &--today {
+  &__button-weekly {
+    grid-area: button-weekly;
+  }
+
+  &--primary {
     grid-area: chores-primary;
   }
 
-  &--week {
+  &--secondary {
     grid-area: chores-secondary;
   }
 }
@@ -22,14 +28,11 @@
   .chores-view {
     flex-direction: column !important;
     overflow-y: auto;
+    margin-top: 0;
 
     &__column {
       max-width: none !important;
       flex: auto !important;
-    }
-
-    &--week {
-      display: none;
     }
   }
 }
