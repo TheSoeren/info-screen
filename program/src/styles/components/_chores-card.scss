@@ -24,9 +24,7 @@
     right: 0;
   }
 
-  &__image-container {
-    display: flex;
-    justify-content: center;
+  &__image {
     max-height: 22vh;
   }
 
@@ -53,7 +51,7 @@
         padding: 10px;
       }
 
-      &__image-container {
+      &__image {
         max-height: 9vh;
       }
 

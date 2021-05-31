@@ -1,0 +1,12 @@
+.minimal-event {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  padding: 3px 10px;
+
+  &__title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

@@ -2,11 +2,11 @@
   <div class="weather">
     <div class="weather__today">
       <h2>Heute</h2>
-      <weather-card :weather-data="hourlyToday" hourly></weather-card>
+      <weather-card :weather-data="hourlyToday"></weather-card>
     </div>
     <div class="weather__tomorrow">
       <h2>Morgen</h2>
-      <weather-card :weather-data="hourlyTomorrow" hourly></weather-card>
+      <weather-card :weather-data="hourlyTomorrow"></weather-card>
     </div>
     <div class="weather__week">
       <h2>Prognose</h2>
@@ -42,7 +42,6 @@ export default {
       for (const hour of this.hourly) {
         hoursToday.push(hour)
         if (hour.timestamp_local.includes('00:00:00')) {
-          console.log('BREAK:', hoursToday.length)
           return hoursToday
         }
       }
@@ -67,7 +66,7 @@ export default {
       return hoursTomorrow
     },
     dailyTenDays () {
-      return this.forecast.slice(0, 11)
+      return this.forecast.slice(1, 13)
     },
     breakpointMd () {
       return this.$vuetify.breakpoint.width <= 768

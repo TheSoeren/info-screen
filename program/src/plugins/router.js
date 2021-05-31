@@ -1,5 +1,5 @@
 import VueRouter from 'vue-router';
-import Home from '../components/Home.vue'
+import Home from '../components/dashboard/index.vue'
 import Chores from '../components/chores/index.vue'
 import Calendar from '../components/calendar/index.vue'
 import Weather from '../components/weather/index.vue'
