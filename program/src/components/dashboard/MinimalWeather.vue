@@ -1,7 +1,8 @@
 <template> 
-  <v-card v-if="weatherObject"
-          :class="['weather-card', { 'weather-card--daily': !this.dataIsArray }]"
+  <v-card v-if="weatherObject.weather"
+          class="weather-card"
           elevation="4"
+          color="rgb(255, 255, 255, 0.3)"
   >
     <div class="weather-card__heading">
       <div class="weather-card__title">
@@ -17,7 +18,11 @@
         {{ weatherObject.temp }}&deg;C
       </div>
       <div class="weather-card__display-image">
-        <v-img :src="`https://www.weatherbit.io/static/img/icons/${weatherObject.weather.icon}.png`" :alt="weatherObject.weather.icon"></v-img>
+        <v-img :src="`https://www.weatherbit.io/static/img/icons/${weatherObject.weather.icon}.png`"
+               :alt="weatherObject.weather.icon"
+               height="100px"
+               contain
+        ></v-img>
       </div>
     </div>
 
@@ -39,7 +44,7 @@
       </div>
     </div>
 
-    <div v-if="!this.dataIsArray" class="weather-card__temp">
+    <div class="weather-card__temp">
       <div class="weather-card__temp-icon">
         <v-icon>mdi-thermometer-lines</v-icon>
       </div>
@@ -47,13 +52,6 @@
         {{ weatherObject.min_temp }}&deg;C / {{ weatherObject.max_temp }}&deg;C
       </div>
     </div>
-
-    <v-slider v-if="dataIsArray"
-              v-model="slider"
-              :max="weatherData.length - 1"
-              :tick-labels="sliderLabel"
-              ticks
-    ></v-slider>
   </v-card>
 </template>
 <script>
@@ -62,34 +60,18 @@ import moment from 'moment'
 export default {
   name: 'WeatherCard',
   props: {
-    weatherData: {
-      type: [Array, Object],
+    weatherObject: {
+      type: Object,
       required: true
     }
   },
   data () {
     return {
-      moment,
-      slider: 0
+      moment
     }
   },
   computed: {
-    dataIsArray() {
-      return Array.isArray(this.weatherData)
-    },
-    weatherObject () {
-      if (this.dataIsArray) {
-        return this.weatherData[this.slider]
-      }
-      return this.weatherData
-    },
-    sliderLabel () {
-      return this.weatherData.map(weather => moment(weather.timestamp_local).format('H'))
-    },
     dateTimeDisplay () {
-      if (this.dataIsArray) {
-        return moment(this.weatherObject.timestamp_local).format('LT')
-      }
       return moment(this.weatherObject.datetime).format('dd, DD. MMMM yyyy')
     }
   }

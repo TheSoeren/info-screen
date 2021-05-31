@@ -8,6 +8,7 @@
   height: 100%;
   padding: $app-content-padding;
   overflow-y: auto;
+  overflow-x: hidden;
 
   &__today {
     grid-area: forecast-today;

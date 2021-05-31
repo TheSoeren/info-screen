@@ -2,6 +2,7 @@
   <v-app class="info-screen">
     <v-app-bar class="app-bar primary" height="70px" app>
       <v-btn class="app-bar__app secondary" elevation="2" fab to="/">
+        <v-icon>mdi-home</v-icon>
       </v-btn>
       <v-divider vertical dark></v-divider>
       <v-btn class="app-bar__app secondary" elevation="2" fab to="/chores">

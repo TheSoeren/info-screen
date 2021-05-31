@@ -13,6 +13,10 @@
     display: none;
   }
 
+  &__event {
+    cursor: pointer;
+  }
+
   .month-view {
     .vuecal {
       &__event {

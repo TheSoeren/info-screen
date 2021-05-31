@@ -5,21 +5,24 @@
            :key="index"
            :cols="cols"
     >
-      <chore :chore="chore"
+      <chore v-if="!minimal"
+             :chore="chore"
              :chore-index="index"
              :secondary="secondary"
       ></chore>
+      <minimal-chore v-else :chore="chore"></minimal-chore>
     </v-col>
   </div>
 </template>
 <script>
 import { mapState } from 'vuex'
 import Chore from './Chore.vue'
+import MinimalChore from './MinimalChore.vue'
 import moment from 'moment'
 
 export default {
   name: 'CardView',
-  components: { Chore },
+  components: { Chore, MinimalChore },
   props: {
     today: {
       type: Boolean,
@@ -30,10 +33,14 @@ export default {
       default: false
     },
     cols: {
-      type: Number,
+      type: [Number, String],
       default: 3
     },
     secondary: {
+      type: Boolean,
+      default: false
+    },
+    minimal: {
       type: Boolean,
       default: false
     }
