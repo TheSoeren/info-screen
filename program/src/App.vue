@@ -10,6 +10,9 @@
       <v-btn class="app-bar__app secondary" elevation="2" fab to="/calendar">
         <v-icon>mdi-calendar-range</v-icon>
       </v-btn>
+      <v-btn class="app-bar__app secondary" elevation="2" fab to="/weather">
+        <v-icon>mdi-weather-partly-cloudy</v-icon>
+      </v-btn>
     </v-app-bar>
     <v-main class="app-detail">
       <router-view/>
@@ -17,7 +20,12 @@
   </v-app>
 </template>
 <script>
+import moment from 'moment'
+
 export default {
-  name: 'App'
+  name: 'App',
+  created () {
+    moment.locale('de')
+  }
 }
 </script>

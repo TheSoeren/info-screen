@@ -1,0 +1,17 @@
+.v-dialog {
+  width: 50% !important;
+
+  .v-input--selection-controls {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: $breakpoint-min-md) {
+  .v-dialog {
+    width: 100% !important;
+
+    .v-input--selection-controls__input {
+      margin-right: 0 !important;
+    }
+  }
+}

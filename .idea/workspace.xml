@@ -19,23 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08ca0850-dfa1-4b1d-ab91-5f19013f558e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/reset-chores.js" afterDir="false" />
+    <list default="true" id="08ca0850-dfa1-4b1d-ab91-5f19013f558e" name="Default Changelist" comment="added persistence for the state of chores&#10;- added &quot;today&quot; button to calendar&#10;- improved responsiveness of dialog&#10;- added weekly chores view for mobile&#10;- improved top-margin botch after opening calendar">
+      <change afterPath="$PROJECT_DIR$/program/src/components/weather/WeatherCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/program/src/components/weather/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/program/src/styles/components/_weather-card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/program/src/styles/components/_weather.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/program/src/styles/elements/_v-dialog.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/program/src/styles/elements/_v-slider.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/components/calendar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/calendar/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/components/chores/CardView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/chores/CardView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/components/chores/Chore.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/chores/Chore.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/components/chores/ChoresList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/chores/ChoresList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/components/chores/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/components/chores/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/plugins/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/plugins/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/plugins/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/plugins/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/program/src/styles/_general.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/_general.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/styles/components/_app-detail.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/components/_app-detail.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/styles/components/_chores-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/components/_chores-card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program/src/styles/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/_index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/program/src/styles/components/_chores-list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/components/_chores-list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/styles/components/_chores-view.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/components/_chores-view.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/styles/components/_chores.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/components/_chores.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program/src/styles/elements/_add-chores-dialog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/program/src/styles/elements/_add-chores-dialog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/rest_api.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/rest_api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,11 +54,15 @@
     </option>
   </component>
   <component name="ProjectId" id="1rHmLt27Wo4Z5mzCsz4d1w1BzBt" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/program/src/components/calendar" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
@@ -109,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619974188631</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added persistence for the state of chores&#10;- added &quot;today&quot; button to calendar&#10;- improved responsiveness of dialog&#10;- added weekly chores view for mobile&#10;- improved top-margin botch after opening calendar">
+      <created>1621526582867</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1621526582867</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,7 +124,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -125,17 +138,19 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="move server, data and site to raspberry pi" />
     <MESSAGE value="move server, data and site to raspberry pi&#10;- add fast event creation for work shifts" />
     <MESSAGE value="change content of school shift" />
     <MESSAGE value="fixed visibility of buttons on mobile&#10;- fixed creation of shifts&#10;- added shift&#10;- added event creation through double click&#10;- added shift buttons to event creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed visibility of buttons on mobile&#10;- fixed creation of shifts&#10;- added shift&#10;- added event creation through double click&#10;- added shift buttons to event creation" />
+    <MESSAGE value="added persistence for the state of chores&#10;- added &quot;today&quot; button to calendar&#10;- improved responsiveness of dialog&#10;- added weekly chores view for mobile&#10;- improved top-margin botch after opening calendar" />
+    <option name="LAST_COMMIT_MESSAGE" value="added persistence for the state of chores&#10;- added &quot;today&quot; button to calendar&#10;- improved responsiveness of dialog&#10;- added weekly chores view for mobile&#10;- improved top-margin botch after opening calendar" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1619365650080">
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1622481581484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619365650080" />
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622481581484" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1618641395246">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -144,10 +159,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="86" key="MergeDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619368815594" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1621526354726">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1621526584246">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1621526354726" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1621526584246" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1619976676260">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -156,10 +171,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1621525371402" />
-    <state x="331" y="159" width="1223" height="674" key="find.popup" timestamp="1621524737627">
+    <state x="331" y="159" width="1223" height="674" key="find.popup" timestamp="1621526731229">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="331" y="159" width="1223" height="674" key="find.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1621524737627" />
+    <state x="331" y="159" width="1223" height="674" key="find.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1621526731229" />
     <state x="739" y="233" key="git4idea.branch.GitSmartOperationDialog" timestamp="1619368800314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,0 +1,50 @@
+.weather-card {
+  padding: 25px;
+
+  &__heading {
+    &-title {
+      font-size: 1.5rem;
+    }
+
+    &-subtitle {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__display {
+    display: flex;
+    align-items: center;
+
+    &-image {
+      margin-left: 10px;
+    }
+
+    &-temp {
+      font-size: 2rem;
+    }
+  }
+
+  &__wind,
+  &__precipation,
+  &__temp {
+    display: flex;
+
+    &-icon {
+      margin-right: 10px
+    }
+  }
+
+  &--daily {
+    .weather-card__display {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-min-md) {
+  .weather-card--daily {
+    .weather-card__display {
+      flex-direction: row;
+    }
+  }
+}
