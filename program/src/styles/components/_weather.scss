@@ -1,0 +1,31 @@
+.weather {
+  display: grid;
+  grid-template-areas: "forecast-today forecast-tomorrow"
+                       "forecast-week forecast-week";
+  grid-template-columns: 30% 70%;
+  grid-gap: 10px;
+
+  height: 100%;
+  padding: $app-content-padding;
+  overflow-y: auto;
+
+  &__today {
+    grid-area: forecast-today;
+  }
+
+  &__tomorrow {
+    grid-area: forecast-tomorrow;
+  }
+
+  &__week {
+    grid-area: forecast-week;
+  }
+}
+
+@media (max-width: $breakpoint-min-md) {
+  .weather {
+    grid-template-areas: "forecast-today forecast-today"
+                         "forecast-tomorrow forecast-tomorrow"
+                         "forecast-week forecast-week";
+  }
+}

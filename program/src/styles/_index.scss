@@ -15,6 +15,8 @@ $color-pack: false;
 @import "./elements/vuecal";
 @import "./elements/add-event-dialog";
 @import "./elements/event-detail-dialog";
+@import "./elements/v-dialog";
+@import "./elements/v-slider";
 
 // COMPONENTS
 // Styling of whole components
@@ -25,3 +27,5 @@ $color-pack: false;
 @import "./components/chores-view";
 @import "./components/chores-card";
 @import "./components/calendar";
+@import "./components/weather";
+@import "./components/weather-card";
