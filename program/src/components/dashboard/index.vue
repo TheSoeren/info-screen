@@ -52,7 +52,7 @@ export default {
   computed: {
     ...mapState(['events']),
     eventsToday() {
-      return this.events.filter(event => moment().isSame(event.start, 'day'))
+      return this.events.filter(event => moment().isBetween(event.start, event.end, 'day', '[]'))
     }
   },
   methods: {
