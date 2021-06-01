@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import Vuetify from 'vuetify'
+import IdleVue from "idle-vue";
 
 import './styles/_index.scss'
 
@@ -14,10 +15,17 @@ import router from './plugins/router.js'
 import vuetify from './plugins/vuetify.js';
 import App from './App.vue'
 
-new Vue({
+const eventsHub = new Vue({
   el: '#app',
   store,
   router,
   vuetify,
   render: h => h(App)
+})
+
+Vue.use(IdleVue, {
+  eventEmitter: eventsHub,
+  store,
+  idleTime: 30000,
+  startAtIdle: false
 })

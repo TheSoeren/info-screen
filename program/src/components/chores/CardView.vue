@@ -49,6 +49,9 @@ export default {
     ...mapState(['chores', 'allChores']),
     relevantChores () {
       if (this.today) {
+        if (this.minimal) {
+          return this.chores.filter(chore => !chore.done)
+        }
         return this.chores
       } else if (this.thisWeek) {
         return this.allChores.filter(chore => {
