@@ -4,9 +4,18 @@
   height: 30px;
   padding: 3px 10px;
 
-  &__title {
+  &__title,
+  &__time {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+  }
+}
+
+@media (max-width: $breakpoint-min-md) {
+  .minimal-event {
+    flex-direction: column;
+    height: auto;
+    max-height: 50px;
   }
 }
