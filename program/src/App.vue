@@ -1,6 +1,7 @@
 <template>
   <v-app class="info-screen">
-    <v-app-bar class="app-bar primary" height="70px" app>
+    <v-overlay :value="isIdle"></v-overlay>
+    <v-app-bar v-if="!isIdle" class="app-bar primary" height="70px" app>
       <v-btn class="app-bar__app secondary" elevation="2" fab to="/">
         <v-icon>mdi-home</v-icon>
       </v-btn>
@@ -25,8 +26,26 @@ import moment from 'moment'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      showAppBar: true
+    }
+  },
   created () {
     moment.locale('de')
+  },
+  computed: {
+    isIdle () {
+      const idleVue = this.$store.state.idleVue
+      return idleVue ? idleVue.isIdle : false
+    }
+  },
+  watch: {
+    isIdle: {
+      handler: function (newVal) {
+        if (newVal) this.$router.push('/')
+      }
+    }
   }
 }
 </script>
