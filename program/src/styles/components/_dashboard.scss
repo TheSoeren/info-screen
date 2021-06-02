@@ -31,9 +31,12 @@
   }
 
   &__events {
-    grid-area: events;
     padding: 25px;
     backdrop-filter: blur(5px);
+
+    &-container {
+      grid-area: events;
+    }
   }
 
   &__chores {
@@ -42,6 +45,10 @@
     .chores-view {
       flex-flow: wrap;
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 

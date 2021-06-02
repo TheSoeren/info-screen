@@ -1,26 +1,32 @@
 <template>
   <div class="dashboard">
     <div class="dashboard__weather">
-      <minimal-weather :weather-object="weather"></minimal-weather>
+      <router-link to="/weather">
+        <minimal-weather :weather-object="weather"></minimal-weather>
+      </router-link>
     </div>
-    <v-card class="dashboard__events" color="rgb(255, 255, 255, 0.3)" elevation="4">
-      <v-row class="dashboard__events-participants" no-gutters>
-        <v-col cols="6">Fabian</v-col>
-        <v-col cols="6">Nadine</v-col>
-      </v-row>
-      <v-row v-for="event in eventsToday"
-             :key="event.id"
-             class="mb-1"
-             no-gutters
-      >
-        <v-col cols="6">
-          <minimal-event v-if="event.participants.includes('Fabian')" :event="event"></minimal-event>
-        </v-col>
-        <v-col cols="6">
-          <minimal-event v-if="event.participants.includes('Nadine')" :event="event"></minimal-event>
-        </v-col>
-      </v-row>
-    </v-card>
+    <div class="dashboard__events-container">
+      <router-link to="/calendar">
+        <v-card class="dashboard__events" color="rgb(255, 255, 255, 0.3)" elevation="4">
+          <v-row class="dashboard__events-participants" no-gutters>
+            <v-col cols="6">Fabian</v-col>
+            <v-col cols="6">Nadine</v-col>
+          </v-row>
+          <v-row v-for="event in eventsToday"
+                :key="event.id"
+                class="mb-1"
+                no-gutters
+          >
+            <v-col cols="6">
+              <minimal-event v-if="event.participants.includes('Fabian')" :event="event"></minimal-event>
+            </v-col>
+            <v-col cols="6">
+              <minimal-event v-if="event.participants.includes('Nadine')" :event="event"></minimal-event>
+            </v-col>
+          </v-row>
+        </v-card>
+      </router-link>
+    </div>
     <div class="dashboard__chores">
       <card-view cols="2" today minimal></card-view>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <v-app class="info-screen">
-    <v-overlay :value="isIdle"></v-overlay>
+    <v-overlay :value="isIdle" :opacity="opacityByDaytime"></v-overlay>
     <v-app-bar v-if="!isIdle" class="app-bar primary" height="70px" app>
       <v-btn class="app-bar__app secondary" elevation="2" fab to="/">
         <v-icon>mdi-home</v-icon>
@@ -38,12 +38,21 @@ export default {
     isIdle () {
       const idleVue = this.$store.state.idleVue
       return idleVue ? idleVue.isIdle : false
+    },
+    opacityByDaytime () {
+      const now = moment().hour()
+      if (now > 23 || now < 8) {
+        return '0.9'
+      }
+      return '0.5'
     }
   },
   watch: {
     isIdle: {
       handler: function (newVal) {
-        if (newVal) this.$router.push('/')
+        if (newVal && this.$router.history.current.path !== '/') {
+          this.$router.push('/')
+        }
       }
     }
   }
